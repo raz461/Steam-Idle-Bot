@@ -23,7 +23,7 @@ To get started with the Steam Idle Bot, follow these steps:
 
 Before you start, make sure to configure your bot by editing the `config.json` file. Here's an example of what your `config.json` might look like:
 
-```json
+```js
 {
     "username": "your_steam_username", // The username of your Steam account.
     "password": "your_steam_password", // The password of your Steam account.
