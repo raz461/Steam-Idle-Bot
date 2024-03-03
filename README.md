@@ -21,24 +21,40 @@ To get started with the Steam Idle Bot, follow these steps:
 
 ## Configuration
 
-Before you start, make sure to configure your bot by editing the `config.json` file. Here's an example of what your `config.json` might look like:
+Before you start, make sure to configure your bot by editing the `config.json` file. Below is a detailed description of each configuration option:
+
+- `username`: Your Steam username. This is required for the bot to log in.
+- `password`: Your Steam password. This is required for the bot to log in.
+- `mainSteamID`: Your main Steam ID. This is used to identify the owner of the bot. Only this Steam ID will have the privilege to use commands if privacy is set to "private".
+- `webhook`: Your webhook URL. This can be used to send notifications to a Discord channel or other services.
+- `privacy`: This can be set to "public" or "private". If set to "private", only the `mainSteamID` will be able to use the bot commands.
+- `commands`: This object lists all the available commands and whether they are enabled (`true`) or disabled (`false`).
+  - `help`: Enables or disables the help command.
+  - `status`: Enables or disables the status command.
+  - `uptime`: Enables or disables the uptime command.
+  - `welcome`: Enables or disables the welcome command.
+- `status`: This can be set to different values to represent the bot's status (e.g., 1 for Online, 2 for Busy, etc.).
+- `idling`: Set this to `true` to enable game idling, or `false` to disable it.
+- `games`: An array of game IDs. These are the games that the bot will idle in if idling is enabled.
+
+Make sure to replace each placeholder with your actual data. Here's an example of what your `config.json` might look like:
 
 ```js
 {
-    "username": "your_steam_username", // The username of your Steam account.
-    "password": "your_steam_password", // The password of your Steam account.
-    "mainSteamID": "your_main_steam_id", // Your SteamID64, used to identify if commands come from the bot owner.
-    "webhook": "your_webhook_url", // URL to a webhook for sending notifications (optional).
-    "privacy": "public", // Can be "public" or "private". Controls who can send commands to the bot. If "private", only the mainSteamID can send commands.
-    "commands": { // Enables or disables specific commands.
-        "help": true, // Enable/disable the help command.
-        "status": true, // Enable/disable the status command.
-        "uptime": true, // Enable/disable the uptime command.
-        "welcome": true // Enable/disable the welcome command.
+    "username": "your_steam_username",
+    "password": "your_steam_password",
+    "mainSteamID": "your_main_steam_id",
+    "webhook": "your_webhook_url",
+    "privacy": "public",
+    "commands": {
+        "help": true,
+        "status": true,
+        "uptime": true,
+        "welcome": true
     },
-    "status": 1, // Sets the bot's online status. 1 for Online, 2 for Busy, 3 for Away, etc.
-    "idling": true, // Enables or disables game idling feature.
-    "games": [730, 570, 440], // List of game IDs the bot will idle on if idling is enabled.
+    "status": 1,
+    "idling": true,
+    "games": [730, 570, 440],
 }
 ```
 
