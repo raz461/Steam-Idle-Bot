@@ -28,6 +28,7 @@ Before you start, make sure to configure your bot by editing the `config.json` f
     "username": "your_steam_username",
     "password": "your_steam_password",
     "mainSteamID": "your_main_steam_id",
+    "webhook": "your_webhook_url",
     "privacy": "public",
     "commands": {
         "help": true,
@@ -35,8 +36,9 @@ Before you start, make sure to configure your bot by editing the `config.json` f
         "uptime": true,
         "welcome": true
     },
+    "status": 1,
+    "idling": true,
     "games": [730, 570, 440],
-    "idling": true
 }
 ```
 
