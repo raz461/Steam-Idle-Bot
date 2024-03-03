@@ -11,7 +11,7 @@ To get started with the Steam Idle Bot, follow these steps:
 1. Clone the repository: `git clone https://github.com/your_username/steam-idle-bot.git`
 2. Install the dependencies: `npm install`
 3. Configure your bot by editing the `config.json` file (see Configuration section below).
-4. Run the bot: `node bot.js`
+4. Run the bot: `npm run start`
 
 ## Features
 
@@ -28,6 +28,7 @@ Before you start, make sure to configure your bot by editing the `config.json` f
     "username": "your_steam_username",
     "password": "your_steam_password",
     "mainSteamID": "your_main_steam_id",
+    "webhook": "your_webhook_url",
     "privacy": "public",
     "commands": {
         "help": true,
@@ -35,8 +36,9 @@ Before you start, make sure to configure your bot by editing the `config.json` f
         "uptime": true,
         "welcome": true
     },
+    "status": 1,
+    "idling": true,
     "games": [730, 570, 440],
-    "idling": true
 }
 ```
 
