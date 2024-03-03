@@ -47,20 +47,19 @@ login(config.username, config.password)
 
 function handleCommand(user, commandName, args, steamID) {
     if (config.commands[commandName] === false) {
-        console.log(`El comando ${commandName} está deshabilitado.`);
+        console.log(`The command ${commandName} is disabled.`);
         return;
     }
     const command = commands.get(commandName);
     if (!command) {
-
-        console.log(`No se encontró el comando: ${commandName}`);
+        console.log(`Command not found: ${commandName}`);
         return;
     }
 
     try {
         command.execute(user, args, steamID);
     } catch (error) {
-        console.error(`Error al ejecutar el comando ${commandName}:`, error);
-        log.log('Steam', `Error al ejecutar el comando ${commandName}: ${error}`, 'red');
+        console.error(`Error executing command ${commandName}:`, error);
+        log.log('Steam', `Error executing command ${commandName}: ${error}`, 'red');
     }
 }
