@@ -25,20 +25,20 @@ Before you start, make sure to configure your bot by editing the `config.json` f
 
 ```json
 {
-    "username": "your_steam_username",
-    "password": "your_steam_password",
-    "mainSteamID": "your_main_steam_id",
-    "webhook": "your_webhook_url",
-    "privacy": "public",
-    "commands": {
-        "help": true,
-        "status": true,
-        "uptime": true,
-        "welcome": true
+    "username": "your_steam_username", // The username of your Steam account.
+    "password": "your_steam_password", // The password of your Steam account.
+    "mainSteamID": "your_main_steam_id", // Your SteamID64, used to identify if commands come from the bot owner.
+    "webhook": "your_webhook_url", // URL to a webhook for sending notifications (optional).
+    "privacy": "public", // Can be "public" or "private". Controls who can send commands to the bot. If "private", only the mainSteamID can send commands.
+    "commands": { // Enables or disables specific commands.
+        "help": true, // Enable/disable the help command.
+        "status": true, // Enable/disable the status command.
+        "uptime": true, // Enable/disable the uptime command.
+        "welcome": true // Enable/disable the welcome command.
     },
-    "status": 1,
-    "idling": true,
-    "games": [730, 570, 440],
+    "status": 1, // Sets the bot's online status. 1 for Online, 2 for Busy, 3 for Away, etc.
+    "idling": true, // Enables or disables game idling feature.
+    "games": [730, 570, 440], // List of game IDs the bot will idle on if idling is enabled.
 }
 ```
 
