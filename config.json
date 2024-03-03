@@ -1,0 +1,16 @@
+{
+    "username": "yourusername",
+    "password": "yourpassword",
+    "webhook": "yourwebhookurl",
+    "privacy": "public",
+    "mainSteamID": "yourmainsteamid",
+    "idling": true,
+    "status": 1,
+    "commands": {
+        "help": true,
+        "status": true,
+        "uptime": true,
+        "welcome": true
+    },
+    "games": [730, 570, 440]
+}
