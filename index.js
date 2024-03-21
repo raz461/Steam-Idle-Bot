@@ -4,6 +4,7 @@ const { login, user } = require('./utils/auth');
 const log = require('./utils/logger');
 
 const commands = new Map();
+
 fs.readdirSync('./commands').filter(file => file.endsWith('.js')).forEach(file => {
     const command = require(`./commands/${file}`);
     commands.set(command.name, command);
@@ -25,11 +26,11 @@ login(config.username, config.password)
             }
         }
 
-        user.on('friendMessage', function(steamID, message) {
+        user.on('friendMessage', function (steamID, message) {
             if (message.startsWith('!')) {
                 const args = message.slice(1).split(' ');
                 const commandName = args.shift().toLowerCase();
-        
+
                 if (config.privacy === "public" || steamID.getSteamID64() === config.mainSteamID) {
                     handleCommand(user, commandName, args, steamID);
                 } else {
@@ -37,7 +38,6 @@ login(config.username, config.password)
                 }
             }
         });
-        
 
     })
     .catch(err => {
@@ -63,3 +63,4 @@ function handleCommand(user, commandName, args, steamID) {
         log.log('Steam', `Error executing command ${commandName}: ${error}`, 'red');
     }
 }
+
